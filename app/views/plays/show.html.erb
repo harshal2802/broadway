@@ -1,5 +1,6 @@
 <h2><%= @play.title %></h2>
 <h3><%= @play.director %></h3>
+<h4><%= @play.category.name %></h4>
 <p><%= @play.description %></p>
 
 
@@ -8,6 +9,6 @@
         <% if @play.user_id == current_user.id %>
             <%= link_to "Edit", edit_play_path(@play) %>
             <%= link_to "delete", play_path(@play), method: :delete, data: { confirm: "Are you sure?"} %>
-        
+        <% end %>
     <% end %>
 </div>
